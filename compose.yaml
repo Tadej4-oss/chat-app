@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: chatuser
+      POSTGRES_PASSWORD: local_dev_password
+      POSTGRES_DB: chat_app
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chatuser -d chat_app"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      DATABASE_URL: postgresql://chatuser:local_dev_password@db:5432/chat_app
+      WEBSOCKET_INTERNAL_URL: http://websocket:8080
+    depends_on:
+      db:
+        condition: service_healthy
+
+  websocket:
+    build:
+      context: .
+      dockerfile: Dockerfile.websocket
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      DATABASE_URL: postgresql://chatuser:local_dev_password@db:5432/chat_app
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

@@ -1,0 +1,182 @@
+.enter-chat-page {
+  min-height: calc(100dvh - 72px);
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  color: #e8e8ee;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(167, 139, 250, 0.16), transparent 34rem),
+    #101014;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.enter-chat-div {
+  width: min(100%, 460px);
+  padding: clamp(28px, 7vw, 48px);
+  border: 1px solid #2b2b36;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(35, 34, 44, 0.96), rgba(26, 26, 33, 0.98));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+  text-align: center;
+}
+
+.enter-chat-eyebrow {
+  margin: 0 0 12px;
+  color: #a78bfa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.enter-chat-div h1 {
+  color: #f4f1fb;
+  font-size: clamp(27px, 7vw, 34px);
+  font-weight: 650;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.enter-chat-div a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 0 20px;
+  border: 1px solid #9876d3;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #8b65ca, #7450ae);
+  box-shadow: 0 8px 24px rgba(128, 90, 192, 0.22);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.enter-chat-div a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 28px rgba(128, 90, 192, 0.32);
+}
+
+.enter-chat-div a:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 4px;
+}
+
+.login-prompt {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 32px 20px;
+  color: #e8e8ee;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(167, 139, 250, 0.13), transparent 34rem),
+    #101014;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.login-prompt__card {
+  position: relative;
+  width: min(100%, 460px);
+  padding: clamp(28px, 7vw, 48px);
+  border: 1px solid #2b2b36;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(35, 34, 44, 0.96), rgba(26, 26, 33, 0.98));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+  text-align: center;
+}
+
+.login-prompt__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 26px;
+  border: 1px solid #51436c;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #44345f, #30283f);
+  color: #c4b5fd;
+  box-shadow: 0 10px 30px rgba(128, 90, 192, 0.2);
+}
+
+.login-prompt__eyebrow {
+  margin: 0 0 12px;
+  color: #a78bfa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.login-prompt__title {
+  margin: 0;
+  color: #f4f1fb;
+  font-size: clamp(27px, 7vw, 34px);
+  font-weight: 650;
+  letter-spacing: -1.2px;
+  line-height: 1.15;
+}
+
+.login-prompt__description {
+  max-width: 310px;
+  margin: 15px auto 28px;
+  color: #a6a5b3;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.login-prompt__sign-in {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #9876d3;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #8b65ca, #7450ae);
+  box-shadow: 0 8px 24px rgba(128, 90, 192, 0.22);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.login-prompt__sign-in:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 28px rgba(128, 90, 192, 0.32);
+}
+
+.login-prompt__sign-in:focus-visible,
+.login-prompt__register a:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 4px;
+}
+
+.login-prompt__arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.login-prompt__register {
+  margin: 22px 0 0;
+  color: #858492;
+  font-size: 13px;
+}
+
+.login-prompt__register a {
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+.login-prompt__register a:hover {
+  color: #ded5ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-prompt__sign-in {
+    transition: none;
+  }
+}
